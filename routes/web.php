@@ -15,7 +15,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [AuthController::class, 'login'])->name('login');
+Route::get('/', [AuthController::class, 'login']);
 Route::post('/auth/login', [AuthController::class, 'postLogin']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
