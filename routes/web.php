@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +15,13 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'Kontol']);
-Route::get('/taufik', [HomeController::class, 'Pepek']);
-Route::get('/hery', [HomeController::class, 'silit']);
+Route::get('/', [AuthController::class, 'login'])->name('login');
+Route::post('/auth/login', [AuthController::class, 'postLogin']);
+Route::get('/logout', [AuthController::class, 'logout']);
+
+Route::middleware(['auth'])->group(function () {
+    //Home Controller
+    Route::get('/home', [HomeController::class, 'index']);
+
+
+});
