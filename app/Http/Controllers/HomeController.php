@@ -16,4 +16,7 @@ class HomeController extends Controller
     public function silit (){
         return view('cum');
     }
+     public function herygay (){
+        return view('dexstepgay');
+    }
 }

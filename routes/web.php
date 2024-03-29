@@ -18,3 +18,4 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'Kontol']);
 Route::get('/taufik', [HomeController::class, 'Pepek']);
 Route::get('/hery', [HomeController::class, 'silit']);
+Route::get('/alvin', [HomeController::class, 'herygay']);
